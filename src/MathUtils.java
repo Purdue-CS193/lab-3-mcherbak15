@@ -3,7 +3,7 @@ public class MathUtils {
      * divideNumbers -- a / b
      * Divide a by b and return the result
      */
-    public static double divideNumbers(int dividend, int divisor) {
+    public static double divideNumbers(double dividend, double divisor) {
         /* Do some casual division ... Super easy ... Shouldn't be any problems here */
         double res = dividend / divisor;
         /* Return the DEFINITELY CORRECT result */
@@ -14,32 +14,16 @@ public class MathUtils {
      * raiseToPower -- (base)^(exp)
      * Raise the number base to power exp
      */
-    public static double raiseToPower(int base, int exp) {
+    public static double raiseToPower(double base, double exp) {
         /* Set initial result to be just the number */
-        int res = base;
+        double res;
 
-        /* Determine if the exponent is negative */
-        boolean isNegative = false;
-        if (exp < 0) {
-            exp *= -1;
-            isNegative = true;
-        }
 
-        /* Multiply the result by the base exp times
-            Ex: base = 2, exp = 2
-               --> res = 2, then res = 4 */
-        for (int i = 0; i < exp; i++) {
-           res *= base; 
-        }
+        // sorry sean, I couldn't read your spaghetti code with nasty if statements
+        // and for loops... so I deleted it ALL and used a handy method from the
+        // math library! Sorry bout it.
+        res = Math.pow(base, exp);
 
-        /* If it's a negative exponent, we should invert it! */
-        if (isNegative) {
-            double dividedRes = divideNumbers(1, res);
-            return dividedRes;
-        }
-        /* Otherwise, we are safe to just return the result */
-        else {
-            return res;
-        }
+        return res;
     }    
 }
